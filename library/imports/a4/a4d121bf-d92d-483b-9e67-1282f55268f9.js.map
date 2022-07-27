@@ -1,0 +1,1 @@
+{"version":3,"sources":["assets/script/config.ts"],"names":[],"mappings":";;;;;;;AAAA,IAAY,WAGX;AAHD,WAAY,WAAW;IACnB,+CAAS,CAAA;IACT,6CAAQ,CAAA;AACZ,CAAC,EAHW,WAAW,GAAX,mBAAW,KAAX,mBAAW,QAGtB;AAAA,CAAC","file":"","sourceRoot":"/","sourcesContent":["export enum PokerStatus {\n    CLOSE = 0,\n    OPEN = 1,\n};\n"]}
