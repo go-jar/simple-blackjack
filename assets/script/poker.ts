@@ -1,6 +1,4 @@
-import {PokerStatus} from "./config"
-
-export default class Poker {
+export class Poker {
     public point: number = -1;
     public status: PokerStatus = PokerStatus.CLOSE;
 
@@ -8,4 +6,9 @@ export default class Poker {
         this.point = point;
         this.status = status;
     }
-}
+};
+
+export enum PokerStatus {
+    CLOSE = 0,
+    OPEN = 1,
+};

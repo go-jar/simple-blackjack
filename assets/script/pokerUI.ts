@@ -6,8 +6,7 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 const {ccclass, property} = cc._decorator;
-import Poker from "./poker"
-import {PokerStatus} from "./config"
+import {Poker, PokerStatus} from "./poker"
 
 @ccclass
 export default class PokerUI extends cc.Component {

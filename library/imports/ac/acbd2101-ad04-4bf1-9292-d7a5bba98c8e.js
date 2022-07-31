@@ -30,7 +30,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
-var config_1 = require("./config");
+var poker_1 = require("./poker");
 var PokerUI = /** @class */ (function (_super) {
     __extends(PokerUI, _super);
     function PokerUI() {
@@ -48,7 +48,7 @@ var PokerUI = /** @class */ (function (_super) {
         this.setStatus(poker.status);
     };
     PokerUI.prototype.setStatus = function (status) {
-        if (status == config_1.PokerStatus.CLOSE) {
+        if (status == poker_1.PokerStatus.CLOSE) {
             this.point.node.active = false;
             this.card.spriteFrame = this.cardBack;
         }

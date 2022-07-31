@@ -1,28 +1,28 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "blue_btn",
-    "texture": "dbc063c2-fef7-4215-bbf1-cf2721c8711d",
+    "name": "statistics_progress_bg",
+    "texture": "7219cc96-f04a-4a8c-88d1-59dfe86c5f2e",
     "atlas": "",
     "rect": [
       0,
       0,
-      330,
-      160
+      66,
+      188
     ],
     "offset": [
       0,
       0
     ],
     "originalSize": [
-      330,
-      160
+      66,
+      188
     ],
     "capInsets": [
-      0,
-      0,
-      0,
-      0
+      24,
+      32,
+      24,
+      32
     ]
   }
 }

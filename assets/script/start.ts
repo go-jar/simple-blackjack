@@ -17,7 +17,7 @@ export default class StartScene extends cc.Component {
         this.playButton.node.on('click', this.onPlayBtnClick, this);
     }
 
-    onPlayBtnClick(button) {
+    onPlayBtnClick() {
         cc.director.loadScene('game');
     }
     // update (dt) {}

@@ -32,12 +32,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var poker_1 = require("./poker");
 var pokerUI_1 = require("./pokerUI");
-var config_1 = require("./config");
 var POKER_COUNT = 11;
 var SHUFFLE_COUNT = 100;
 var PLAYER_CARD_INDEX = 9;
 var ROBOT_CARD_INDEX = 10;
-var ROBOT_SKIP_POSSIBILITY = 0.6;
+var ROBOT_SKIP_POSSIBILITY = 0.5;
 var WINNER_PICK_CARD_DURATION = 0.5;
 var LOSER_PICK_CARD_DURATION = 1.0;
 var WINNER_OPEN_CARD_DURATION = 0.3;
@@ -50,9 +49,10 @@ var Game = /** @class */ (function (_super) {
         _this.pokerPrefab = null;
         _this.pokers = [];
         _this.restPokerCnt = POKER_COUNT - 2;
-        _this.pickBtn = null;
-        _this.skipBtn = null;
+        _this.hitBtn = null;
+        _this.stayBtn = null;
         _this.restartBtn = null;
+        _this.closeBtn = null;
         _this.playerArea = null;
         _this.robotArea = null;
         _this.playerPoint = null;
@@ -67,20 +67,23 @@ var Game = /** @class */ (function (_super) {
         _this.robot = null;
         _this.turnPlayer = true;
         _this.playerFirst = true;
+        _this.gameOver = false;
         return _this;
     }
     Game.prototype.start = function () {
         cc.audioEngine.playEffect(this.bgMusic, true);
         for (var point = 1; point <= POKER_COUNT; point++) {
-            var poker = new poker_1.default(point, config_1.PokerStatus.CLOSE);
+            var poker = new poker_1.Poker(point, poker_1.PokerStatus.CLOSE);
             this.pokers.push(poker);
         }
         this.init();
-        this.pickBtn.node.on('click', this.onPickBtnClick, this);
-        this.skipBtn.node.on('click', this.onSkipBtnClick, this);
+        this.hitBtn.node.on('click', this.onHitBtnClick, this);
+        this.stayBtn.node.on('click', this.onStayBtnClick, this);
         this.restartBtn.node.on('click', this.onRestartBtnClick, this);
+        this.closeBtn.on(cc.Node.EventType.TOUCH_START, this.onCloseBtnClick, this);
     };
     Game.prototype.init = function () {
+        this.gameOver = false;
         this.shuffle();
         this.restPokerCnt = POKER_COUNT - 2;
         this.pokerContainer.removeAllChildren();
@@ -134,10 +137,10 @@ var Game = /** @class */ (function (_super) {
         pokerUI.init(poker);
         return pokerUI;
     };
-    Game.prototype.onPickBtnClick = function () {
+    Game.prototype.onHitBtnClick = function () {
         if (this.restPokerCnt <= 0)
             return this.whoWin();
-        if (!this.turnPlayer)
+        if (!this.turnPlayer || this.gameOver)
             return;
         var pokerNode = this.pokerContainer.children[this.restPokerCnt - 1];
         var worldPosition = pokerNode.convertToWorldSpaceAR(cc.v3(this.playerCardPosX(), -150, 0));
@@ -150,13 +153,13 @@ var Game = /** @class */ (function (_super) {
         if (this.playerFirst) {
             pokerNode.runAction(cc.sequence(cc.delayTime(0.0), cc.moveTo(WINNER_PICK_CARD_DURATION, areaPosition.x, areaPosition.y), cc.scaleTo(WINNER_OPEN_CARD_DURATION, 0, 1), cc.callFunc(function () {
                 var pokerUI = pokerNode.getComponent(pokerUI_1.default);
-                pokerUI.setStatus(config_1.PokerStatus.OPEN);
+                pokerUI.setStatus(poker_1.PokerStatus.OPEN);
             }), cc.scaleTo(WINNER_OPEN_CARD_DURATION, 1, 1)));
         }
         else {
             pokerNode.runAction(cc.sequence(cc.delayTime(0.0), cc.moveTo(LOSER_PICK_CARD_DURATION, areaPosition.x, areaPosition.y), cc.scaleTo(LOSER_OPEN_CARD_DURATION, 0, 1), cc.callFunc(function () {
                 var pokerUI = pokerNode.getComponent(pokerUI_1.default);
-                pokerUI.setStatus(config_1.PokerStatus.OPEN);
+                pokerUI.setStatus(poker_1.PokerStatus.OPEN);
             }), cc.scaleTo(LOSER_OPEN_CARD_DURATION, 1, 1)));
         }
         this.player.score += this.pokers[this.restPokerCnt - 1].point;
@@ -165,19 +168,19 @@ var Game = /** @class */ (function (_super) {
         this.turnPlayer = false;
         this.playerPoint.string = "Point: " + this.player.score;
         this.player.skip = false;
-        this.robotPlay();
+        this.robotHit();
     };
     Game.prototype.playerCardPosX = function () {
         return 330 + 70 * this.player.cardCnt;
     };
-    Game.prototype.robotPlay = function () {
+    Game.prototype.robotHit = function () {
         if (this.restPokerCnt <= 0)
             return this.whoWin();
-        if (this.turnPlayer)
+        if (this.turnPlayer || this.gameOver)
             return;
         if (this.robot.score >= 17 ||
             (this.robot.score >= 10 && Math.random() < ROBOT_SKIP_POSSIBILITY)) {
-            return this.robotSkip();
+            return this.robotStay();
         }
         var pokerNode = this.pokerContainer.children[this.restPokerCnt - 1];
         var worldPosition = pokerNode.convertToWorldSpaceAR(cc.v3(this.robotCardPosX(), 150, 0));
@@ -189,13 +192,13 @@ var Game = /** @class */ (function (_super) {
         if (this.playerFirst) {
             pokerNode.runAction(cc.sequence(cc.delayTime(0.0), cc.moveTo(LOSER_PICK_CARD_DURATION, areaPosition.x, areaPosition.y), cc.scaleTo(LOSER_OPEN_CARD_DURATION, 0, 1), cc.callFunc(function () {
                 var pokerUI = pokerNode.getComponent(pokerUI_1.default);
-                pokerUI.setStatus(config_1.PokerStatus.OPEN);
+                pokerUI.setStatus(poker_1.PokerStatus.OPEN);
             }), cc.scaleTo(LOSER_OPEN_CARD_DURATION, 1, 1)));
         }
         else {
             pokerNode.runAction(cc.sequence(cc.delayTime(0.0), cc.moveTo(WINNER_PICK_CARD_DURATION, areaPosition.x, areaPosition.y), cc.scaleTo(WINNER_OPEN_CARD_DURATION, 0, 1), cc.callFunc(function () {
                 var pokerUI = pokerNode.getComponent(pokerUI_1.default);
-                pokerUI.setStatus(config_1.PokerStatus.OPEN);
+                pokerUI.setStatus(poker_1.PokerStatus.OPEN);
             }), cc.scaleTo(WINNER_OPEN_CARD_DURATION, 1, 1)));
         }
         this.robot.score += this.pokers[this.restPokerCnt - 1].point;
@@ -206,11 +209,11 @@ var Game = /** @class */ (function (_super) {
         this.robotPoint.string = "Point: " + this.robot.score;
         this.robotChoice.string = '';
     };
-    Game.prototype.robotSkip = function () {
+    Game.prototype.robotStay = function () {
         if (this.restPokerCnt <= 0)
             return this.whoWin();
         this.turnPlayer = true;
-        this.robotChoice.string = 'Skip';
+        this.robotChoice.string = 'Stay';
         this.robot.skip = true;
         if (this.player.skip) {
             this.whoWin();
@@ -219,17 +222,17 @@ var Game = /** @class */ (function (_super) {
     Game.prototype.robotCardPosX = function () {
         return 330 + 70 * this.robot.cardCnt;
     };
-    Game.prototype.onSkipBtnClick = function () {
+    Game.prototype.onStayBtnClick = function () {
         if (this.restPokerCnt <= 0)
             return this.whoWin();
-        if (!this.turnPlayer)
+        if (!this.turnPlayer || this.gameOver)
             return;
         this.turnPlayer = false;
         this.player.skip = true;
         if (this.robot.skip) {
             return this.whoWin();
         }
-        this.robotPlay();
+        this.robotHit();
     };
     Game.prototype.onRestartBtnClick = function () {
         this.reset();
@@ -237,10 +240,10 @@ var Game = /** @class */ (function (_super) {
     Game.prototype.whoWin = function () {
         var playerHoldCardNode = this.playerArea.children[0];
         var playerHoldCard = playerHoldCardNode.getComponent(pokerUI_1.default);
-        playerHoldCard.setStatus(config_1.PokerStatus.OPEN);
+        playerHoldCard.setStatus(poker_1.PokerStatus.OPEN);
         var robotHoldCardNode = this.robotArea.children[0];
         var robotHoldCard = robotHoldCardNode.getComponent(pokerUI_1.default);
-        robotHoldCard.setStatus(config_1.PokerStatus.OPEN);
+        robotHoldCard.setStatus(poker_1.PokerStatus.OPEN);
         console.log('player score: ' + this.player.score +
             ', player hold: ' + this.pokers[PLAYER_CARD_INDEX].point);
         this.player.score += this.pokers[PLAYER_CARD_INDEX].point;
@@ -250,45 +253,53 @@ var Game = /** @class */ (function (_super) {
         this.playerPoint.string = "Point: " + this.player.score;
         this.robotPoint.string = "Point: " + this.robot.score;
         var result = '';
+        var playerWin = false;
         if (this.player.score == this.robot.score) {
             result = 'Draw';
-            this.playerFirst = true;
+            playerWin = false;
         }
         else if (this.player.score > 21 && this.robot.score > 21) {
             if (this.player.score < this.robot.score) {
                 result = 'You Win';
-                this.playerFirst = true;
+                playerWin = true;
             }
             else {
                 result = 'You Lose';
-                this.playerFirst = false;
+                playerWin = false;
             }
         }
         else if (this.player.score > 21) {
             result = 'You Lose';
-            this.playerFirst = false;
+            playerWin = false;
         }
         else if (this.robot.score > 21) {
             result = 'You Win';
-            this.playerFirst = true;
+            playerWin = true;
         }
         else {
             if (this.player.score > this.robot.score) {
                 result = 'You Win';
-                this.playerFirst = true;
+                playerWin = true;
             }
             else {
                 result = 'You Lose';
-                this.playerFirst = false;
+                playerWin = false;
             }
         }
         this.result.string = result;
-        if (this.playerFirst) {
+        if (playerWin) {
+            this.playerFirst = true;
             cc.audioEngine.playEffect(this.successMusic, false);
         }
         else {
+            this.playerFirst = false;
             cc.audioEngine.playEffect(this.failedMusic, false);
         }
+        this.gameOver = true;
+    };
+    Game.prototype.onCloseBtnClick = function () {
+        cc.director.loadScene('menu');
+        this.reset();
     };
     __decorate([
         property(cc.Node)
@@ -298,13 +309,16 @@ var Game = /** @class */ (function (_super) {
     ], Game.prototype, "pokerPrefab", void 0);
     __decorate([
         property(cc.Button)
-    ], Game.prototype, "pickBtn", void 0);
+    ], Game.prototype, "hitBtn", void 0);
     __decorate([
         property(cc.Button)
-    ], Game.prototype, "skipBtn", void 0);
+    ], Game.prototype, "stayBtn", void 0);
     __decorate([
         property(cc.Button)
     ], Game.prototype, "restartBtn", void 0);
+    __decorate([
+        property(cc.Node)
+    ], Game.prototype, "closeBtn", void 0);
     __decorate([
         property(cc.Node)
     ], Game.prototype, "playerArea", void 0);

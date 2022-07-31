@@ -1,6 +1,6 @@
 
 (function () {
-var scripts = [{"deps":{"./assets/script/config":3,"./assets/script/start":5,"./assets/script/poker":1,"./assets/script/pokerUI":2,"./assets/script/game":4},"path":"preview-scripts/__qc_index__.js"},{"deps":{"./config":3},"path":"preview-scripts/assets/script/poker.js"},{"deps":{"./config":3},"path":"preview-scripts/assets/script/pokerUI.js"},{"deps":{},"path":"preview-scripts/assets/script/config.js"},{"deps":{"./poker":1,"./pokerUI":2,"./config":3},"path":"preview-scripts/assets/script/game.js"},{"deps":{},"path":"preview-scripts/assets/script/start.js"}];
+var scripts = [{"deps":{"./assets/script/instruction":6,"./assets/script/menu":2,"./assets/script/poker":3,"./assets/script/pokerUI":4,"./assets/script/start":5,"./assets/script/achievement":7,"./assets/script/game":1},"path":"preview-scripts/__qc_index__.js"},{"deps":{"./pokerUI":4,"./poker":3},"path":"preview-scripts/assets/script/game.js"},{"deps":{},"path":"preview-scripts/assets/script/menu.js"},{"deps":{},"path":"preview-scripts/assets/script/poker.js"},{"deps":{"./poker":3},"path":"preview-scripts/assets/script/pokerUI.js"},{"deps":{},"path":"preview-scripts/assets/script/start.js"},{"deps":{},"path":"preview-scripts/assets/script/instruction.js"},{"deps":{},"path":"preview-scripts/assets/script/achievement.js"}];
 var entries = ["preview-scripts/__qc_index__.js"];
 var bundleScript = 'preview-scripts/__qc_bundle__.js';
 
