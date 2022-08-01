@@ -1,32 +1,82 @@
-import { JSONRPCClient, JSONRPCRequest } from "json-rpc-2.0";
-const URL = 'http://aaa';
+import Axios from 'axios'
 
 export default class Client {
-    client: JSONRPCClient;
+    url: string;
+    privkey: string;
+    address: string;
 
-    constructor() {
-        this.client = new JSONRPCClient((jsonRPCRequest: JSONRPCRequest) =>
-            fetch(URL, {
-                method: 'POST',
-                headers: {
-                    'content-type': 'application/json',
-                },
-                body: JSON.stringify(jsonRPCRequest),
-            }).then((response) => {
-                if (response.status === 200) {
-                    // Use client.receive when you received a JSON-RPC response.
-                    return response.json().then((jsonRPCResponse) => this.client.receive(jsonRPCResponse));
-                } else if (jsonRPCRequest.id !== undefined) {
-                    return Promise.reject(new Error(response.statusText));
-                } else {
-                    return Promise.reject(new Error('request id undefined'));
-                }
-            }),
-        );
+    constructor(url: string, privkey: string, address: string) {
+        this.url = url;
+        this.privkey = privkey;
+        this.address = address;
     }
 
-    public async getScore(userId: string) {
-        let param = { userId: userId };
-        return this.client.request('getScore', param);
+    private async request(method: string, param: any): Promise<any> {
+        return await Axios.post(this.url, {
+            jsonrpc: "2.0", 
+            method, 
+            params: [param],
+            id: 1
+        }, {
+            headers: {
+                'content-type': 'application/json; charset=utf-8'
+            }
+        });
+    }
+
+    private async send_transaction(call_func: string): Promise<any> {
+        let response = await this.request('make_request_digest', {
+            sender: this.address,
+            contract_call: call_func,
+            private_key: this.privkey
+        });
+        if (response.status != 200) {
+            throw 'bad jsonrpc call';
+        }
+        return response.data.result.digest;
+    }
+
+    public async battle_win(): Promise<any> {
+        return await this.send_transaction('battle_win()');
+    }
+
+    public async battle_lose(): Promise<any> {
+        return await this.send_transaction('battle_lose()');
+    }
+
+    public async claim_nfts(): Promise<any> {
+        return await this.send_transaction('claim_nfts()');
+    }
+
+    public async fetch_claimable(): Promise<boolean> {
+        let response = await this.request('fetch_global_data', {
+            address: this.address,
+        });
+        if (response.status != 200) {
+            throw 'bad jsonrpc call';
+        }
+        let data = JSON.parse(response.data.result.data);
+        return data.nfts.length > 0;
+    }
+
+    public async fetch_nfts(): Promise<any> {
+        let response = await this.request('fetch_personal_data', {
+            address: this.address,
+        });
+        if (response.status != 200) {
+            throw 'bad jsonrpc call';
+        }
+        return JSON.parse(response.data.result.data);
     }
 }
+
+/**
+ * FOR EXAMPLES
+ * 
+ *  let client = new Client(
+ *      'http://127.0.0.1:8090',
+ *      '8d929e962f940f75aa32054f19a5ea2ce70ae30bfe4ff7cf2dbed70d556265df',
+ *      'ckt1qyq93wzur9h9l6qwyk6d4dvkuufp6gvl08aszz5syl'
+ *  );
+ *  let tx_hash = await client.battle_win();
+ */

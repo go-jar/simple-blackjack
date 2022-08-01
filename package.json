@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/go-jar/simple-blackjack#readme",
   "dependencies": {
-    "json-rpc-2.0": "^1.3.0"
+    "axios": "^0.27.2"
   }
 }
