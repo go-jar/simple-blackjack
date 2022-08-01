@@ -1,14 +1,8 @@
 "use strict";
-cc._RF.push(module, '92270gzzWRNnalinz8/oNfC', 'instruction');
-// script/instruction.ts
+cc._RF.push(module, '36ef3EHI8pJuI2INKDtpnhY', 'achievementItemUI');
+// script/achievementItemUI.ts
 
 "use strict";
-// Learn TypeScript:
-//  - https://docs.cocos.com/creator/manual/en/scripting/typescript.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -30,27 +24,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
-var NewClass = /** @class */ (function (_super) {
-    __extends(NewClass, _super);
-    function NewClass() {
+var AchievementItemUI = /** @class */ (function (_super) {
+    __extends(AchievementItemUI, _super);
+    function AchievementItemUI() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.closeBtn = null;
+        _this.id = null;
         return _this;
     }
-    NewClass.prototype.start = function () {
-        this.closeBtn.on(cc.Node.EventType.TOUCH_START, this.onCloseBtnClick, this);
-    };
-    NewClass.prototype.onCloseBtnClick = function () {
-        cc.director.loadScene('menu');
+    AchievementItemUI.prototype.init = function (item) {
+        this.id.string = "" + item.id;
     };
     __decorate([
-        property(cc.Node)
-    ], NewClass.prototype, "closeBtn", void 0);
-    NewClass = __decorate([
+        property(cc.Label)
+    ], AchievementItemUI.prototype, "id", void 0);
+    AchievementItemUI = __decorate([
         ccclass
-    ], NewClass);
-    return NewClass;
+    ], AchievementItemUI);
+    return AchievementItemUI;
 }(cc.Component));
-exports.default = NewClass;
+exports.default = AchievementItemUI;
+;
 
 cc._RF.pop();

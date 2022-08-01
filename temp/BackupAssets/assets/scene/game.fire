@@ -2460,7 +2460,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        72.654,
+        64.106,
         0,
         0,
         0,
@@ -2615,6 +2615,9 @@
     },
     "failedMusic": {
       "__uuid__": "4949f643-5958-4fb0-b378-e4901ee6bb3e"
+    },
+    "clickMusic": {
+      "__uuid__": "6427c274-ce5f-4aae-b3db-083205aa4272"
     },
     "win": {
       "__id__": 48

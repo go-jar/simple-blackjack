@@ -2617,6 +2617,15 @@
     "failedMusic": {
       "__uuid__": "4949f643-5958-4fb0-b378-e4901ee6bb3e"
     },
+    "clickMusic": {
+      "__uuid__": "6427c274-ce5f-4aae-b3db-083205aa4272"
+    },
+    "stayMusic": {
+      "__uuid__": "883e8d7e-322e-41de-94fd-207380dbb1df"
+    },
+    "restartMusic": {
+      "__uuid__": "5d91013f-8b71-4e98-9dfb-8667af78588e"
+    },
     "win": {
       "__id__": 48
     },

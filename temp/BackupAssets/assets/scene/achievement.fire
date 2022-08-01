@@ -17,7 +17,7 @@
         "__id__": 2
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [],
     "_prefab": null,
     "_opacity": 255,
@@ -468,7 +468,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        154.989,
+        266.107,
         0,
         0,
         0,
@@ -564,8 +564,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 543,
-      "height": 188
+      "width": 550,
+      "height": 160
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -577,7 +577,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        0,
+        138.271,
         0,
         0,
         0,
@@ -633,8 +633,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 154,
-      "height": 154
+      "width": 140,
+      "height": 140
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -695,8 +695,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 154,
-      "height": 154
+      "width": 140,
+      "height": 140
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -745,13 +745,13 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_srcBlendFactor": 770,
+    "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
       "__uuid__": "5d364f8c-60f1-4c27-b980-6b05b1d4d14f"
     },
     "_type": 3,
-    "_sizeMode": 1,
+    "_sizeMode": 0,
     "_fillType": 2,
     "_fillCenter": {
       "__type__": "cc.Vec2",
@@ -879,7 +879,7 @@
       "__uuid__": "5d364f8c-60f1-4c27-b980-6b05b1d4d14f"
     },
     "_type": 0,
-    "_sizeMode": 1,
+    "_sizeMode": 0,
     "_fillType": 2,
     "_fillCenter": {
       "__type__": "cc.Vec2",
@@ -1064,7 +1064,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "4bd4743d-3326-4832-b978-58d1472f7277"
+      "__uuid__": "8daa0b9b-0733-44b6-aca1-575c8e4398eb"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -1263,6 +1263,9 @@
     "closeBtn": {
       "__id__": 7
     },
+    "clickMusic": {
+      "__uuid__": "6427c274-ce5f-4aae-b3db-083205aa4272"
+    },
     "progressLabel": {
       "__id__": 16
     },
@@ -1272,6 +1275,7 @@
     "progressSprite": {
       "__id__": 14
     },
+    "achievementItem": null,
     "_id": "3dauZm/SdO5q/jSgnYEhhU"
   }
 ]

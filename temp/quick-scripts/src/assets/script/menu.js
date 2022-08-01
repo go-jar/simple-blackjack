@@ -36,22 +36,26 @@ var StartScene = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.playButton = null;
         _this.achievementButton = null;
-        _this.instructionButton = null;
+        _this.helpButton = null;
+        _this.clickMusic = null;
         return _this;
     }
     StartScene.prototype.start = function () {
         this.playButton.on(cc.Node.EventType.TOUCH_START, this.onPlayBtnClick, this);
         this.achievementButton.on(cc.Node.EventType.TOUCH_START, this.onAchievementBtnClick, this);
-        this.instructionButton.on(cc.Node.EventType.TOUCH_START, this.onInstructionBtnClick, this);
+        this.helpButton.on(cc.Node.EventType.TOUCH_START, this.onHelpBtnClick, this);
     };
     StartScene.prototype.onPlayBtnClick = function (button) {
+        cc.audioEngine.playEffect(this.clickMusic, false);
         cc.director.loadScene('game');
     };
     StartScene.prototype.onAchievementBtnClick = function () {
+        cc.audioEngine.playEffect(this.clickMusic, false);
         cc.director.loadScene('achievement');
     };
-    StartScene.prototype.onInstructionBtnClick = function () {
-        cc.director.loadScene('instruction');
+    StartScene.prototype.onHelpBtnClick = function () {
+        cc.audioEngine.playEffect(this.clickMusic, false);
+        cc.director.loadScene('help');
     };
     __decorate([
         property(cc.Node)
@@ -61,7 +65,10 @@ var StartScene = /** @class */ (function (_super) {
     ], StartScene.prototype, "achievementButton", void 0);
     __decorate([
         property(cc.Node)
-    ], StartScene.prototype, "instructionButton", void 0);
+    ], StartScene.prototype, "helpButton", void 0);
+    __decorate([
+        property(cc.AudioClip)
+    ], StartScene.prototype, "clickMusic", void 0);
     StartScene = __decorate([
         ccclass
     ], StartScene);

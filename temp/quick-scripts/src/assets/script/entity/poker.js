@@ -1,6 +1,6 @@
 "use strict";
-cc._RF.push(module, '893d9+ice5GHKoNxx4s5vAl', 'poker');
-// script/poker.ts
+cc._RF.push(module, '03aedWfAz5BiKZennPDsaMt', 'poker');
+// script/entity/poker.ts
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });

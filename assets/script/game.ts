@@ -6,7 +6,7 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 const {ccclass, property} = cc._decorator;
-import {Poker, PokerStatus} from "./poker"
+import {Poker, PokerStatus} from "./entity/poker"
 import PokerUI from "./pokerUI"
 import Client from './client'
 
@@ -44,6 +44,9 @@ export default class Game extends cc.Component {
     @property(cc.AudioClip) flipMusic: cc.AudioClip = null;
     @property(cc.AudioClip) successMusic: cc.AudioClip = null;
     @property(cc.AudioClip) failedMusic: cc.AudioClip = null;
+    @property(cc.AudioClip) clickMusic: cc.AudioClip = null;
+    @property(cc.AudioClip) stayMusic: cc.AudioClip = null;
+    @property(cc.AudioClip) restartMusic: cc.AudioClip = null;
 
     @property(cc.Sprite) win: cc.Sprite = null;
 
@@ -70,7 +73,7 @@ export default class Game extends cc.Component {
         this.restartBtn.node.on('click', this.onRestartBtnClick, this);
         this.closeBtn.on(cc.Node.EventType.TOUCH_START, this.onCloseBtnClick, this);
 
-        this.client = new Client();
+        // this.client = new Client();
     }
 
     private init() {
@@ -90,13 +93,14 @@ export default class Game extends cc.Component {
         this.playerArea.removeAllChildren();
         this.robotArea.removeAllChildren();
 
-        this.playerPoint.string = 'Point: 0';
+        this.player = new Player();
+        this.robot = new Player();
+
+        this.player.score += this.pokers[PLAYER_CARD_INDEX].point;
+        this.playerPoint.string = `Point: ${this.player.score}`;
         this.robotPoint.string = 'Point: 0';
         this.result.string = '';
         this.robotChoice.string = '';
-
-        this.player = new Player();
-        this.robot = new Player();
 
         this.placePlayerHoldCard();
         this.placeRobotHoldCard();
@@ -111,6 +115,7 @@ export default class Game extends cc.Component {
         let pokerUI = this.createPokerUI(this.pokers[PLAYER_CARD_INDEX]);
         pokerUI.node.x = -400;
         pokerUI.node.y = 70;
+        pokerUI.setStatus(PokerStatus.OPEN);
         this.playerArea.addChild(pokerUI.node);
         pokerUI.node.runAction(cc.sequence(
             cc.delayTime(0.0),
@@ -204,8 +209,9 @@ export default class Game extends cc.Component {
         if (this.restPokerCnt <= 0) return this.whoWin();
         if (this.turnPlayer || this.gameOver) return;
 
-        if (this.robot.score >= 17 || 
-            (this.robot.score >= 10 && Math.random() < ROBOT_SKIP_POSSIBILITY)) {
+        if (this.robot.score >= 17 
+            || this.robot.score + this.pokers[ROBOT_CARD_INDEX].point >= 21
+            || (this.robot.score >= 10 && Math.random() < ROBOT_SKIP_POSSIBILITY)) {
             return this.robotStay();
         }
 
@@ -268,6 +274,7 @@ export default class Game extends cc.Component {
     }
 
     private onStayBtnClick() {
+        cc.audioEngine.playEffect(this.stayMusic, false);
         if (this.restPokerCnt <= 0) return this.whoWin();
         if (!this.turnPlayer || this.gameOver) return;
         this.turnPlayer = false;
@@ -281,23 +288,20 @@ export default class Game extends cc.Component {
     }
 
     private onRestartBtnClick() {
+        cc.audioEngine.playEffect(this.restartMusic, false);
         this.reset();
     }
 
     private whoWin() {
-        let playerHoldCardNode = this.playerArea.children[0];
-        let playerHoldCard = playerHoldCardNode.getComponent(PokerUI);
-        playerHoldCard.setStatus(PokerStatus.OPEN);
-
         let robotHoldCardNode = this.robotArea.children[0];
         let robotHoldCard = robotHoldCardNode.getComponent(PokerUI);
         robotHoldCard.setStatus(PokerStatus.OPEN);
 
         console.log('player score: ' + this.player.score +
                     ', player hold: ' + this.pokers[PLAYER_CARD_INDEX].point);
-        this.player.score += this.pokers[PLAYER_CARD_INDEX].point;
         console.log('robot score: ' + this.player.score +
                     ', robot hold: ' + this.pokers[ROBOT_CARD_INDEX].point);
+
         this.robot.score += this.pokers[ROBOT_CARD_INDEX].point;
 
         this.playerPoint.string = `Point: ${this.player.score}`;
@@ -344,6 +348,7 @@ export default class Game extends cc.Component {
     }
 
     private onCloseBtnClick() {
+        cc.audioEngine.playEffect(this.clickMusic, false);
         cc.director.loadScene('menu');
         this.reset();
     }

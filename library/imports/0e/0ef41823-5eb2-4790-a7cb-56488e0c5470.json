@@ -1367,8 +1367,11 @@
     "achievementButton": {
       "__id__": 15
     },
-    "instructionButton": {
+    "helpButton": {
       "__id__": 21
+    },
+    "clickMusic": {
+      "__uuid__": "6427c274-ce5f-4aae-b3db-083205aa4272"
     },
     "_id": "aefOa2mThI745aqnqlPswj"
   }

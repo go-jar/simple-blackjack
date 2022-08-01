@@ -11,12 +11,14 @@ const {ccclass, property} = cc._decorator;
 export default class NewClass extends cc.Component {
 
     @property(cc.Node) closeBtn: cc.Node = null;
+    @property(cc.AudioClip) clickMusic: cc.AudioClip = null;
 
     start () {
         this.closeBtn.on(cc.Node.EventType.TOUCH_START, this.onCloseBtnClick, this);
     }
 
     private onCloseBtnClick() {
+        cc.audioEngine.playEffect(this.clickMusic, false);
         cc.director.loadScene('menu');
     }
 }

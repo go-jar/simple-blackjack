@@ -12,23 +12,28 @@ export default class StartScene extends cc.Component {
 
     @property(cc.Node) playButton: cc.Node = null;
     @property(cc.Node) achievementButton: cc.Node = null;
-    @property(cc.Node) instructionButton: cc.Node = null;
+    @property(cc.Node) helpButton: cc.Node = null;
+
+    @property(cc.AudioClip) clickMusic: cc.AudioClip = null;
 
     start () {
         this.playButton.on(cc.Node.EventType.TOUCH_START, this.onPlayBtnClick, this);
         this.achievementButton.on(cc.Node.EventType.TOUCH_START, this.onAchievementBtnClick, this);
-        this.instructionButton.on(cc.Node.EventType.TOUCH_START, this.onInstructionBtnClick, this);
+        this.helpButton.on(cc.Node.EventType.TOUCH_START, this.onHelpBtnClick, this);
     }
 
     private onPlayBtnClick(button) {
+        cc.audioEngine.playEffect(this.clickMusic, false);
         cc.director.loadScene('game');
     }
     
     private onAchievementBtnClick() {
+        cc.audioEngine.playEffect(this.clickMusic, false);
         cc.director.loadScene('achievement');
     }
 
-    private onInstructionBtnClick() {
-        cc.director.loadScene('instruction');
+    private onHelpBtnClick() {
+        cc.audioEngine.playEffect(this.clickMusic, false);
+        cc.director.loadScene('help');
     }
 }

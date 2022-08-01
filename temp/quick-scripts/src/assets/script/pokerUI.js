@@ -30,7 +30,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
-var poker_1 = require("./poker");
+var poker_1 = require("./entity/poker");
 var PokerUI = /** @class */ (function (_super) {
     __extends(PokerUI, _super);
     function PokerUI() {
