@@ -36,18 +36,22 @@ export default class Client {
         return response.data.result.digest;
     }
 
+    // call when win the battle
     public async battle_win(): Promise<any> {
         return await this.send_transaction('battle_win()');
     }
 
+    // call when lose the battle
     public async battle_lose(): Promise<any> {
         return await this.send_transaction('battle_lose()');
     }
 
+    // call while `claim` button clicked in achivement page
     public async claim_nfts(): Promise<any> {
         return await this.send_transaction('claim_nfts()');
     }
 
+    // call to check button status of `claim`
     public async fetch_claimable(): Promise<boolean> {
         let response = await this.request('fetch_global_data', {
             address: this.address,
@@ -59,6 +63,7 @@ export default class Client {
         return data.nfts.length > 0;
     }
 
+    // call to fetch nfts owned by player
     public async fetch_nfts(): Promise<any> {
         let response = await this.request('fetch_personal_data', {
             address: this.address,
