@@ -1,22 +1,22 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "statistics_won_games",
-    "texture": "e20caf93-83b1-49db-b082-ed350ba3216f",
+    "name": "howtoplay_icon",
+    "texture": "43c16d6a-2766-4113-a4a3-aa41eb58c084",
     "atlas": "",
     "rect": [
       0,
       0,
-      149,
-      26
+      37,
+      37
     ],
     "offset": [
       0,
       0
     ],
     "originalSize": [
-      149,
-      26
+      37,
+      37
     ],
     "capInsets": [
       0,

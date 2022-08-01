@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "statistics_icon",
+    "texture": "77423c71-5757-4093-b838-88f6daed3092",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      56,
+      57
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      56,
+      57
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

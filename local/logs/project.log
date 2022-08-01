@@ -183,3 +183,416 @@ Require stack:
 2022-07-31T07:10:09.489Z - normal: Simulator: Function object is released!
 2022-07-31T07:10:09.490Z - normal: Simulator: GC end ..., (js->native map) size: 0, all objects: -1
 2022-07-31T07:10:09.564Z - normal: Simulator: ScriptEngine::cleanup end ...
+2022-07-31T08:53:43.396Z - normal: Simulator: WORKAREA WIDTH 1280.00, HEIGHT 687.00
+2022-07-31T08:53:43.397Z - normal: Simulator: FRAME SCALE = 0.50
+2022-07-31T08:53:44.569Z - normal: Simulator: GLFWError #65544 Happen, Cocoa: Failed to retrieve display name
+2022-07-31T08:53:44.571Z - normal: Simulator: 
+2022-07-31T08:53:44.584Z - normal: Simulator: {
+2022-07-31T08:53:44.588Z - normal: Simulator: 	gl.supports_float_texture: true
+2022-07-31T08:53:44.593Z - normal: Simulator: 	gl.supports_ATITC: false
+2022-07-31T08:53:44.605Z - normal: Simulator: 	gl.supports_discard_framebuffer: false
+2022-07-31T08:53:44.607Z - normal: Simulator: 	gl.supports_NPOT: true
+2022-07-31T08:53:44.611Z - normal: Simulator: 	gl.supports_ETC2: false
+2022-07-31T08:53:44.614Z - normal: Simulator: 	build_type: DEBUG
+2022-07-31T08:53:44.621Z - normal: Simulator: 	gl.vendor: NVIDIA Corporation
+2022-07-31T08:53:44.623Z - normal: Simulator: 	gl.renderer: NVIDIA GeForce 320M OpenGL Engine
+2022-07-31T08:53:44.627Z - normal: Simulator: 	gl.supports_PVRTC: false
+2022-07-31T08:53:44.631Z - normal: Simulator: 	gl.supports_ETC1: false
+2022-07-31T08:53:44.632Z - normal: Simulator: 	gl.supports_BGRA8888: false
+2022-07-31T08:53:44.634Z - normal: Simulator: 	gl.max_texture_size: 8192
+2022-07-31T08:53:44.636Z - normal: Simulator: 	gl.max_texture_units: 16
+2022-07-31T08:53:44.637Z - normal: Simulator: 	gl.supports_OES_packed_depth_stencil: false
+2022-07-31T08:53:44.637Z - normal: Simulator: 	compiled_with_gl_state_cache: true
+2022-07-31T08:53:44.638Z - normal: Simulator: 	gl.supports_OES_map_buffer: false
+2022-07-31T08:53:44.639Z - normal: Simulator: 	gl.supports_vertex_array_object: true
+2022-07-31T08:53:44.640Z - normal: Simulator: 	gl.supports_S3TC: true
+2022-07-31T08:53:44.641Z - normal: Simulator: 	gl.version: 2.1 NVIDIA-10.4.14 310.90.30.05b27
+2022-07-31T08:53:44.642Z - normal: Simulator: 	compiled_with_profiler: false
+2022-07-31T08:53:44.643Z - normal: Simulator: 	gl.supports_OES_depth24: false
+2022-07-31T08:53:44.644Z - normal: Simulator: }
+2022-07-31T08:53:44.645Z - normal: Simulator: Project Config:
+2022-07-31T08:53:44.645Z - normal: Simulator:     project dir: /Applications/CocosCreator.app/Contents/Resources/cocos2d-x/simulator/mac/Simulator.app/Contents/Resources/
+2022-07-31T08:53:44.645Z - normal: Simulator:     writable path: $(PROJDIR)/
+2022-07-31T08:53:44.647Z - normal: Simulator:     script file: $(PROJDIR)/main.js
+2022-07-31T08:53:44.649Z - normal: Simulator:     frame size: 750 x 1334
+2022-07-31T08:53:44.649Z - normal: Simulator:     frame scale: 0.50
+2022-07-31T08:53:44.649Z - normal: Simulator:     show console: NO
+2022-07-31T08:53:44.651Z - normal: Simulator:     write debug log: NO ()
+2022-07-31T08:53:44.651Z - normal: Simulator:     listen: 
+2022-07-31T08:53:44.651Z - normal: Simulator:     debugger: none
+2022-07-31T08:53:44.652Z - normal: Simulator:     add searching path:
+2022-07-31T08:53:44.652Z - normal: Simulator: resetDesignResolution request
+2022-07-31T08:53:44.652Z - normal: Simulator: ------------------------------------------------
+2022-07-31T08:53:44.652Z - normal: Simulator: LOAD Js FILE: jsb-adapter/jsb-builtin.js
+2022-07-31T08:53:44.656Z - normal: Simulator: ------------------------------------------------
+2022-07-31T08:53:44.656Z - normal: Simulator: Initializing V8, version: 8.0.426.16
+2022-07-31T08:53:44.667Z - normal: Simulator: libuv version: 1.23.1-dev
+2022-07-31T08:53:44.678Z - normal: Simulator: Debugger listening..., visit [ devtools://devtools/bundled/js_app.html?v8only=true&ws=0.0.0.0:5086/00010002-0003-4004-8005-000600070008 ] in chrome browser to debug!
+2022-07-31T08:53:44.678Z - normal: Simulator: For help see https://nodejs.org/en/docs/inspector
+2022-07-31T08:53:44.723Z - normal: Simulator: JS: Enable batch GL commands optimization!
+2022-07-31T08:53:44.726Z - normal: Simulator: resetDesignResolution request
+2022-07-31T08:53:44.726Z - normal: Simulator: ------------------------------------------------
+2022-07-31T08:53:44.726Z - normal: Simulator: LOAD Js FILE: main.js
+2022-07-31T08:53:44.727Z - normal: Simulator: ------------------------------------------------
+2022-07-31T08:53:45.708Z - normal: Simulator: JS: Read json failed: Unexpected end of JSON input
+2022-07-31T08:53:45.753Z - normal: Simulator: iShow!
+2022-07-31T08:53:46.391Z - normal: Simulator: JS: load __quick_compile_project__: 29.97499999999991ms
+2022-07-31T08:53:48.031Z - warn: Simulator: libpng warning: iCCP: known incorrect sRGB profile
+2022-07-31T08:53:48.105Z - normal: Simulator: D/renderer (616): Device caps: maxVextexTextures: 16, maxFragUniforms: 512, maxTextureUints: 16, maxVertexAttributes: 16, maxDrawBuffers: 8, maxColorAttatchments: 8
+2022-07-31T08:53:48.106Z - normal: Simulator: JS: Cocos Creator v2.4.0
+2022-07-31T08:53:54.735Z - normal: Simulator: ScriptEngine::cleanup begin ...
+2022-07-31T08:53:54.763Z - normal: Simulator: GC begin ..., (js->native map) size: 123, all objects: 384
+2022-07-31T08:53:54.781Z - normal: Simulator: GC end ..., (js->native map) size: 123, all objects: 384
+2022-07-31T08:53:54.785Z - normal: Simulator: GC begin ..., (js->native map) size: 123, all objects: 384
+2022-07-31T08:53:54.801Z - normal: Simulator: GC end ..., (js->native map) size: 123, all objects: 384
+2022-07-31T08:53:54.802Z - normal: Simulator: GC begin ..., (js->native map) size: 0, all objects: -1
+2022-07-31T08:53:54.802Z - normal: Simulator: Function object is released!
+2022-07-31T08:53:54.805Z - normal: Simulator: GC end ..., (js->native map) size: 0, all objects: -1
+2022-07-31T08:53:55.098Z - normal: Simulator: ScriptEngine::cleanup end ...
+2022-07-31T09:58:23.960Z - failed: load script [protobufjs/light] failed : Error: Cannot find module 'protobufjs/light'
+Require stack:
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/lib/sandbox.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/edit-mode/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/editor.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/renderer.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/index.html
+    at Module._resolveFilename (internal/modules/cjs/loader.js:683:15)
+    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:43:12)
+    at Function.c._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:1272)
+    at Function.Module._load (internal/modules/cjs/loader.js:601:27)
+    at Module.require (internal/modules/cjs/loader.js:739:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:689)
+    at __require (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/rpc.js:7:35)
+    at __define (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/rpc.js:18:37)
+    at /Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/rpc.js:27:25
+2022-07-31T09:58:23.961Z - failed: load script [./assets/script/rpc] failed : TypeError: Cannot read property 'Root' of undefined
+    at __define (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/rpc.js:22:30)
+    at /Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/rpc.js:27:25
+    at Object.<anonymous> (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/rpc.js:34:19)
+    at Object.<anonymous> (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/rpc.js:36:3)
+    at Module._compile (internal/modules/cjs/loader.js:839:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:851:10)
+    at Module.load (internal/modules/cjs/loader.js:701:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:633:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:625:3)
+    at Module.require (internal/modules/cjs/loader.js:739:19)
+2022-07-31T10:01:48.193Z - failed: load script [protobufjs] failed : Error: Cannot find module 'protobufjs'
+Require stack:
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/lib/sandbox.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/edit-mode/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/editor.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/renderer.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/index.html
+    at Module._resolveFilename (internal/modules/cjs/loader.js:683:15)
+    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:43:12)
+    at Function.c._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:1272)
+    at Function.Module._load (internal/modules/cjs/loader.js:601:27)
+    at Module.require (internal/modules/cjs/loader.js:739:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:689)
+    at __require (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/rpc.js:7:35)
+    at __define (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/rpc.js:18:20)
+    at /Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/rpc.js:24:25
+2022-07-31T10:01:48.194Z - failed: load script [./assets/script/rpc] failed : TypeError: Cannot read property 'default' of undefined
+    at __define (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/rpc.js:19:25)
+    at /Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/rpc.js:24:25
+    at Object.<anonymous> (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/rpc.js:31:19)
+    at Object.<anonymous> (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/rpc.js:33:3)
+    at Module._compile (internal/modules/cjs/loader.js:839:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:851:10)
+    at Module.load (internal/modules/cjs/loader.js:701:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:633:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:625:3)
+    at Module.require (internal/modules/cjs/loader.js:739:19)
+2022-07-31T12:07:26.533Z - failed: load script [axios] failed : Error: Cannot find module 'axios'
+Require stack:
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/lib/sandbox.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/edit-mode/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/editor.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/renderer.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/index.html
+    at Module._resolveFilename (internal/modules/cjs/loader.js:683:15)
+    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:43:12)
+    at Function.c._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:1272)
+    at Function.Module._load (internal/modules/cjs/loader.js:601:27)
+    at Module.require (internal/modules/cjs/loader.js:739:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:689)
+    at __require (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:7:35)
+    at __define (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:54:15)
+    at /Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:91:25
+2022-07-31T12:11:46.482Z - failed: load script [axios] failed : Error: Cannot find module 'axios'
+Require stack:
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/lib/sandbox.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/edit-mode/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/editor.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/renderer.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/index.html
+    at Module._resolveFilename (internal/modules/cjs/loader.js:683:15)
+    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:43:12)
+    at Function.c._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:1272)
+    at Function.Module._load (internal/modules/cjs/loader.js:601:27)
+    at Module.require (internal/modules/cjs/loader.js:739:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:689)
+    at __require (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:7:35)
+    at __define (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:54:15)
+    at /Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:91:25
+2022-07-31T12:28:46.603Z - failed: load script [json-rpc-2.0] failed : Error: Cannot find module 'json-rpc-2.0'
+Require stack:
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/lib/sandbox.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/edit-mode/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/editor.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/renderer.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/index.html
+    at Module._resolveFilename (internal/modules/cjs/loader.js:683:15)
+    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:43:12)
+    at Function.c._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:1272)
+    at Function.Module._load (internal/modules/cjs/loader.js:601:27)
+    at Module.require (internal/modules/cjs/loader.js:739:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:689)
+    at __require (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:7:35)
+    at __define (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:54:22)
+    at /Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:95:25
+2022-07-31T12:41:45.756Z - failed: load script [json-rpc-2.0] failed : Error: Cannot find module 'json-rpc-2.0'
+Require stack:
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/lib/sandbox.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/edit-mode/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/editor.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/renderer.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/index.html
+    at Module._resolveFilename (internal/modules/cjs/loader.js:683:15)
+    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:43:12)
+    at Function.c._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:1272)
+    at Function.Module._load (internal/modules/cjs/loader.js:601:27)
+    at Module.require (internal/modules/cjs/loader.js:739:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:689)
+    at __require (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:7:35)
+    at __define (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:54:22)
+    at /Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:96:25
+2022-07-31T12:44:19.852Z - failed: load script [json-rpc-2.0] failed : Error: Cannot find module 'json-rpc-2.0'
+Require stack:
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/lib/sandbox.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/edit-mode/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/editor.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/renderer.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/index.html
+    at Module._resolveFilename (internal/modules/cjs/loader.js:683:15)
+    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:43:12)
+    at Function.c._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:1272)
+    at Function.Module._load (internal/modules/cjs/loader.js:601:27)
+    at Module.require (internal/modules/cjs/loader.js:739:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:689)
+    at __require (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:7:35)
+    at __define (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:54:22)
+    at /Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:96:25
+2022-07-31T12:49:15.874Z - failed: load script [json-rpc-2.0] failed : Error: Cannot find module 'json-rpc-2.0'
+Require stack:
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/lib/sandbox.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/edit-mode/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/editor.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/renderer.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/index.html
+    at Module._resolveFilename (internal/modules/cjs/loader.js:683:15)
+    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:43:12)
+    at Function.c._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:1272)
+    at Function.Module._load (internal/modules/cjs/loader.js:601:27)
+    at Module.require (internal/modules/cjs/loader.js:739:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:689)
+    at __require (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:7:35)
+    at __define (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:54:22)
+    at /Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:96:25
+2022-07-31T12:51:11.541Z - failed: load script [json-rpc-2.0] failed : Error: Cannot find module 'json-rpc-2.0'
+Require stack:
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/lib/sandbox.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/edit-mode/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/editor.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/renderer.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/index.html
+    at Module._resolveFilename (internal/modules/cjs/loader.js:683:15)
+    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:43:12)
+    at Function.c._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:1272)
+    at Function.Module._load (internal/modules/cjs/loader.js:601:27)
+    at Module.require (internal/modules/cjs/loader.js:739:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:689)
+    at __require (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:7:35)
+    at __define (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:54:22)
+    at /Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:96:25
+2022-07-31T13:11:53.830Z - failed: load script [json-rpc-2.0] failed : Error: Cannot find module 'json-rpc-2.0'
+Require stack:
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/lib/sandbox.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/edit-mode/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/editor.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/renderer.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/index.html
+    at Module._resolveFilename (internal/modules/cjs/loader.js:683:15)
+    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:43:12)
+    at Function.c._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:1272)
+    at Function.Module._load (internal/modules/cjs/loader.js:601:27)
+    at Module.require (internal/modules/cjs/loader.js:739:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:689)
+    at __require (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:7:35)
+    at __define (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:54:22)
+    at /Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:96:25
+2022-07-31T13:56:16.343Z - warn: The Button referenced by component "menu" is invalid. Detailed information:
+Node path: "Canvas"
+
+2022-07-31T13:56:16.345Z - warn: The Button referenced by component "menu" is invalid. Detailed information:
+Node path: "Canvas"
+
+2022-07-31T13:56:16.347Z - warn: The Button referenced by component "menu" is invalid. Detailed information:
+Node path: "Canvas"
+
+2022-07-31T13:56:34.462Z - warn: The Button referenced by component "menu" is invalid. Detailed information:
+Node path: "Canvas"
+
+2022-07-31T13:56:34.465Z - warn: The Button referenced by component "menu" is invalid. Detailed information:
+Node path: "Canvas"
+
+2022-07-31T13:56:34.465Z - warn: The Button referenced by component "menu" is invalid. Detailed information:
+Node path: "Canvas"
+
+2022-07-31T13:57:17.742Z - warn: The Button referenced by component "menu" is invalid. Detailed information:
+Node path: "Canvas"
+
+2022-07-31T13:57:17.743Z - warn: The Button referenced by component "menu" is invalid. Detailed information:
+Node path: "Canvas"
+
+2022-07-31T13:57:17.744Z - warn: The Button referenced by component "menu" is invalid. Detailed information:
+Node path: "Canvas"
+
+2022-07-31T13:57:19.226Z - warn: The Button referenced by component "menu" is invalid. Detailed information:
+Node path: "Canvas"
+
+2022-07-31T13:57:19.230Z - warn: The Button referenced by component "menu" is invalid. Detailed information:
+Node path: "Canvas"
+
+2022-07-31T13:57:19.231Z - warn: The Button referenced by component "menu" is invalid. Detailed information:
+Node path: "Canvas"
+
+2022-07-31T13:57:26.921Z - warn: The Button referenced by component "menu" is invalid. Detailed information:
+Node path: "Canvas"
+
+2022-07-31T13:57:26.922Z - warn: The Button referenced by component "menu" is invalid. Detailed information:
+Node path: "Canvas"
+
+2022-07-31T13:57:26.922Z - warn: The Button referenced by component "menu" is invalid. Detailed information:
+Node path: "Canvas"
+
+2022-07-31T14:01:23.618Z - failed: load script [json-rpc-2.0] failed : Error: Cannot find module 'json-rpc-2.0'
+Require stack:
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/lib/sandbox.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/edit-mode/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/editor.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/renderer.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/index.html
+    at Module._resolveFilename (internal/modules/cjs/loader.js:683:15)
+    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:43:12)
+    at Function.c._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:1272)
+    at Function.Module._load (internal/modules/cjs/loader.js:601:27)
+    at Module.require (internal/modules/cjs/loader.js:739:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:689)
+    at __require (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:7:35)
+    at __define (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:54:22)
+    at /Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:96:25
+2022-07-31T14:07:59.734Z - failed: load script [json-rpc-2.0] failed : Error: Cannot find module 'json-rpc-2.0'
+Require stack:
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/lib/sandbox.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/edit-mode/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/editor.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/renderer.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/index.html
+    at Module._resolveFilename (internal/modules/cjs/loader.js:683:15)
+    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:43:12)
+    at Function.c._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:1272)
+    at Function.Module._load (internal/modules/cjs/loader.js:601:27)
+    at Module.require (internal/modules/cjs/loader.js:739:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:689)
+    at __require (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:7:35)
+    at __define (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:54:22)
+    at /Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:96:25
+2022-07-31T14:44:48.081Z - failed: load script [json-rpc-2.0] failed : Error: Cannot find module 'json-rpc-2.0'
+Require stack:
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/lib/sandbox.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/edit-mode/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/editor.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/renderer.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/index.html
+    at Module._resolveFilename (internal/modules/cjs/loader.js:683:15)
+    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:43:12)
+    at Function.c._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:1272)
+    at Function.Module._load (internal/modules/cjs/loader.js:601:27)
+    at Module.require (internal/modules/cjs/loader.js:739:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:689)
+    at __require (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:7:35)
+    at __define (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:54:22)
+    at /Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:96:25
+2022-07-31T14:48:02.344Z - failed: load script [json-rpc-2.0] failed : Error: Cannot find module 'json-rpc-2.0'
+Require stack:
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/lib/sandbox.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/edit-mode/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/editor.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/renderer.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/index.html
+    at Module._resolveFilename (internal/modules/cjs/loader.js:683:15)
+    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:43:12)
+    at Function.c._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:1272)
+    at Function.Module._load (internal/modules/cjs/loader.js:601:27)
+    at Module.require (internal/modules/cjs/loader.js:739:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:689)
+    at __require (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:7:35)
+    at __define (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:54:22)
+    at /Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:96:25

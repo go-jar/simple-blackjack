@@ -1,0 +1,1 @@
+{"version":3,"sources":["assets/script/proto/score.ts"],"names":[],"mappings":"","file":"","sourceRoot":"/","sourcesContent":["export interface ReqGetScore {\n    userId: string,\n}\n\nexport interface ResGetScore {\n    score: {\n        userId: string,\n        score: number,\n    }\n}\n\nexport interface ReqSetScore {\n    userId: string,\n    score: number,\n}\n"]}

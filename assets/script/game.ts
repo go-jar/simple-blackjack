@@ -8,6 +8,7 @@
 const {ccclass, property} = cc._decorator;
 import {Poker, PokerStatus} from "./poker"
 import PokerUI from "./pokerUI"
+import Client from './client'
 
 const POKER_COUNT: number = 11;
 const SHUFFLE_COUNT: number = 100;
@@ -44,11 +45,15 @@ export default class Game extends cc.Component {
     @property(cc.AudioClip) successMusic: cc.AudioClip = null;
     @property(cc.AudioClip) failedMusic: cc.AudioClip = null;
 
+    @property(cc.Sprite) win: cc.Sprite = null;
+
     private player: Player = null;
     private robot: Player = null;
     private turnPlayer: boolean = true;
     private playerFirst: boolean = true;
     private gameOver: boolean = false;
+
+    private client: Client = null;
 
     start () {
         cc.audioEngine.playEffect(this.bgMusic, true);
@@ -64,9 +69,12 @@ export default class Game extends cc.Component {
         this.stayBtn.node.on('click', this.onStayBtnClick, this);
         this.restartBtn.node.on('click', this.onRestartBtnClick, this);
         this.closeBtn.on(cc.Node.EventType.TOUCH_START, this.onCloseBtnClick, this);
+
+        this.client = new Client();
     }
 
     private init() {
+        this.win.node.active = false;
         this.gameOver = false;
         this.shuffle();
         this.restPokerCnt = POKER_COUNT - 2;
@@ -295,42 +303,39 @@ export default class Game extends cc.Component {
         this.playerPoint.string = `Point: ${this.player.score}`;
         this.robotPoint.string = `Point: ${this.robot.score}`;
 
-        let result: string = '';
-        let playerWin: boolean = false;
+        let playerWin: WinStatus = WinStatus.DRAW;
 
         if (this.player.score == this.robot.score) {
-            result = 'Draw';
-            playerWin = false;
+            playerWin = WinStatus.DRAW;
         } else if (this.player.score > 21 && this.robot.score > 21) {
             if (this.player.score < this.robot.score) {
-                result = 'You Win';
-                playerWin = true;
+                playerWin = WinStatus.WIN;
             } else {
-                result = 'You Lose';
-                playerWin = false;
+                playerWin = WinStatus.LOSE;
             }
         } else if (this.player.score > 21) {
-            result = 'You Lose';
-            playerWin = false;
+            playerWin = WinStatus.LOSE;
         } else if (this.robot.score > 21) {
-            result = 'You Win';
-            playerWin = true;
+            playerWin = WinStatus.WIN;
         } else {
             if (this.player.score > this.robot.score) {
-                result = 'You Win';
-                playerWin = true;
+                playerWin = WinStatus.WIN;
             } else {
-                result = 'You Lose';
-                playerWin = false;
+                playerWin = WinStatus.LOSE;
             }
         }
 
-        this.result.string = result;
-
-        if (playerWin) {
+        if (playerWin === WinStatus.WIN) {
+            this.result.string = 'You Win';
             this.playerFirst = true;
+            this.win.node.active = true;
             cc.audioEngine.playEffect(this.successMusic, false);
-        } else {
+        } else  {
+            if (playerWin === WinStatus.DRAW) {
+                this.result.string = 'Draw';
+            } else {
+                this.result.string = 'You Lose';
+            }
             this.playerFirst = false;
             cc.audioEngine.playEffect(this.failedMusic, false);
         }
@@ -354,4 +359,10 @@ class Player {
         this.cardCnt = 0;
         this.skip = false;
     }
+};
+
+enum WinStatus {
+    WIN = 0,
+    DRAW = 1,
+    LOSE = 2,
 };

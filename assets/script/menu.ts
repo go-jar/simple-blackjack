@@ -10,14 +10,14 @@ const {ccclass, property} = cc._decorator;
 @ccclass
 export default class StartScene extends cc.Component {
 
-    @property(cc.Button) playButton: cc.Button = null;
-    @property(cc.Button) achievementButton: cc.Button = null;
-    @property(cc.Button) instructionButton: cc.Button = null;
+    @property(cc.Node) playButton: cc.Node = null;
+    @property(cc.Node) achievementButton: cc.Node = null;
+    @property(cc.Node) instructionButton: cc.Node = null;
 
     start () {
-        this.playButton.node.on('click', this.onPlayBtnClick, this);
-        this.achievementButton.node.on('click', this.onAchievementBtnClick, this);
-        this.instructionButton.node.on('click', this.onInstructionBtnClick, this);
+        this.playButton.on(cc.Node.EventType.TOUCH_START, this.onPlayBtnClick, this);
+        this.achievementButton.on(cc.Node.EventType.TOUCH_START, this.onAchievementBtnClick, this);
+        this.instructionButton.on(cc.Node.EventType.TOUCH_START, this.onInstructionBtnClick, this);
     }
 
     private onPlayBtnClick(button) {

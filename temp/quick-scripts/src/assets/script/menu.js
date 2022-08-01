@@ -40,9 +40,9 @@ var StartScene = /** @class */ (function (_super) {
         return _this;
     }
     StartScene.prototype.start = function () {
-        this.playButton.node.on('click', this.onPlayBtnClick, this);
-        this.achievementButton.node.on('click', this.onAchievementBtnClick, this);
-        this.instructionButton.node.on('click', this.onInstructionBtnClick, this);
+        this.playButton.on(cc.Node.EventType.TOUCH_START, this.onPlayBtnClick, this);
+        this.achievementButton.on(cc.Node.EventType.TOUCH_START, this.onAchievementBtnClick, this);
+        this.instructionButton.on(cc.Node.EventType.TOUCH_START, this.onInstructionBtnClick, this);
     };
     StartScene.prototype.onPlayBtnClick = function (button) {
         cc.director.loadScene('game');
@@ -54,13 +54,13 @@ var StartScene = /** @class */ (function (_super) {
         cc.director.loadScene('instruction');
     };
     __decorate([
-        property(cc.Button)
+        property(cc.Node)
     ], StartScene.prototype, "playButton", void 0);
     __decorate([
-        property(cc.Button)
+        property(cc.Node)
     ], StartScene.prototype, "achievementButton", void 0);
     __decorate([
-        property(cc.Button)
+        property(cc.Node)
     ], StartScene.prototype, "instructionButton", void 0);
     StartScene = __decorate([
         ccclass

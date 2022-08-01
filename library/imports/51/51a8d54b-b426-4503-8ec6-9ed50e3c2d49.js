@@ -32,6 +32,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var poker_1 = require("./poker");
 var pokerUI_1 = require("./pokerUI");
+var client_1 = require("./client");
 var POKER_COUNT = 11;
 var SHUFFLE_COUNT = 100;
 var PLAYER_CARD_INDEX = 9;
@@ -63,11 +64,13 @@ var Game = /** @class */ (function (_super) {
         _this.flipMusic = null;
         _this.successMusic = null;
         _this.failedMusic = null;
+        _this.win = null;
         _this.player = null;
         _this.robot = null;
         _this.turnPlayer = true;
         _this.playerFirst = true;
         _this.gameOver = false;
+        _this.client = null;
         return _this;
     }
     Game.prototype.start = function () {
@@ -81,8 +84,10 @@ var Game = /** @class */ (function (_super) {
         this.stayBtn.node.on('click', this.onStayBtnClick, this);
         this.restartBtn.node.on('click', this.onRestartBtnClick, this);
         this.closeBtn.on(cc.Node.EventType.TOUCH_START, this.onCloseBtnClick, this);
+        this.client = new client_1.default();
     };
     Game.prototype.init = function () {
+        this.win.node.active = false;
         this.gameOver = false;
         this.shuffle();
         this.restPokerCnt = POKER_COUNT - 2;
@@ -252,46 +257,45 @@ var Game = /** @class */ (function (_super) {
         this.robot.score += this.pokers[ROBOT_CARD_INDEX].point;
         this.playerPoint.string = "Point: " + this.player.score;
         this.robotPoint.string = "Point: " + this.robot.score;
-        var result = '';
-        var playerWin = false;
+        var playerWin = WinStatus.DRAW;
         if (this.player.score == this.robot.score) {
-            result = 'Draw';
-            playerWin = false;
+            playerWin = WinStatus.DRAW;
         }
         else if (this.player.score > 21 && this.robot.score > 21) {
             if (this.player.score < this.robot.score) {
-                result = 'You Win';
-                playerWin = true;
+                playerWin = WinStatus.WIN;
             }
             else {
-                result = 'You Lose';
-                playerWin = false;
+                playerWin = WinStatus.LOSE;
             }
         }
         else if (this.player.score > 21) {
-            result = 'You Lose';
-            playerWin = false;
+            playerWin = WinStatus.LOSE;
         }
         else if (this.robot.score > 21) {
-            result = 'You Win';
-            playerWin = true;
+            playerWin = WinStatus.WIN;
         }
         else {
             if (this.player.score > this.robot.score) {
-                result = 'You Win';
-                playerWin = true;
+                playerWin = WinStatus.WIN;
             }
             else {
-                result = 'You Lose';
-                playerWin = false;
+                playerWin = WinStatus.LOSE;
             }
         }
-        this.result.string = result;
-        if (playerWin) {
+        if (playerWin === WinStatus.WIN) {
+            this.result.string = 'You Win';
             this.playerFirst = true;
+            this.win.node.active = true;
             cc.audioEngine.playEffect(this.successMusic, false);
         }
         else {
+            if (playerWin === WinStatus.DRAW) {
+                this.result.string = 'Draw';
+            }
+            else {
+                this.result.string = 'You Lose';
+            }
             this.playerFirst = false;
             cc.audioEngine.playEffect(this.failedMusic, false);
         }
@@ -349,6 +353,9 @@ var Game = /** @class */ (function (_super) {
     __decorate([
         property(cc.AudioClip)
     ], Game.prototype, "failedMusic", void 0);
+    __decorate([
+        property(cc.Sprite)
+    ], Game.prototype, "win", void 0);
     Game = __decorate([
         ccclass
     ], Game);
@@ -363,6 +370,13 @@ var Player = /** @class */ (function () {
     }
     return Player;
 }());
+;
+var WinStatus;
+(function (WinStatus) {
+    WinStatus[WinStatus["WIN"] = 0] = "WIN";
+    WinStatus[WinStatus["DRAW"] = 1] = "DRAW";
+    WinStatus[WinStatus["LOSE"] = 2] = "LOSE";
+})(WinStatus || (WinStatus = {}));
 ;
 
 cc._RF.pop();
