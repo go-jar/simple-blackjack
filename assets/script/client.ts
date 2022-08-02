@@ -1,18 +1,9 @@
 import Axios from 'axios'
 
-interface WinLoseCount {
+interface Achievement {
     win_count: number,
     lose_count: number,
-}
-
-interface Outpoint {
-    tx_hash: string,
-    index: number,
-}
-
-interface NFT {
     nfts: Array<number>,
-    outpoint: Outpoint, // 这个不用使用
 }
 
 export default class Client {
@@ -90,16 +81,12 @@ export default class Client {
         return await this.send_transaction('battle_lose()');
     }
 
-    public async get_win_lose_count(): Promise<WinLoseCount> {
+    public async get_achievement(): Promise<Achievement> {
         let global = await this.fetch_global();
         console.log('global =', global);
-        let result = { win_count: 0, lose_count: 0 };
+        let result = { win_count: 0, lose_count: 0, nfts: [] };
         for (let lock_hash of Object.keys(global.users)) {
-            let v = global.users[lock_hash];
-            result = {
-                win_count: v.win_count,
-                lose_count: v.lose_count
-            };
+            result = global.users[lock_hash];
         }
         return result;
     }
@@ -115,17 +102,6 @@ export default class Client {
     //     }
     //     return response.data.result;
     // }
-
-    // call to fetch nfts owned by player
-    public async fetch_nfts(): Promise<Array<number>> {
-        let global = await this.fetch_global();
-        let result = [];
-        for (let lock_hash of Object.keys(global.users)) {
-            let v = global.users[lock_hash];
-            result = v.nfts;
-        }
-        return result;
-    }
 }
 
 /**
