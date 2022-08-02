@@ -20,7 +20,6 @@ require('./assets/script/help');
 require('./assets/script/menu');
 require('./assets/script/pokerUI');
 require('./assets/script/proto/score');
-require('./assets/script/start');
 
                     }
                     if (nodeEnv) {

@@ -1968,3 +1968,63 @@ Require stack:
     at __require (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:7:35)
     at __define (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:54:22)
     at /Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:96:25
+2022-08-02T01:37:53.114Z - failed: load script [axios] failed : Error: Cannot find module 'axios'
+Require stack:
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/lib/sandbox.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/edit-mode/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/editor.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/renderer.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/index.html
+    at Module._resolveFilename (internal/modules/cjs/loader.js:683:15)
+    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:43:12)
+    at Function.c._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:1272)
+    at Function.Module._load (internal/modules/cjs/loader.js:601:27)
+    at Module.require (internal/modules/cjs/loader.js:739:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:689)
+    at __require (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:7:35)
+    at __define (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:54:15)
+    at /Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:215:25
+2022-08-02T01:45:01.414Z - failed: load script [axios] failed : Error: Cannot find module 'axios'
+Require stack:
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/lib/sandbox.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/edit-mode/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/editor.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/renderer.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/index.html
+    at Module._resolveFilename (internal/modules/cjs/loader.js:683:15)
+    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:43:12)
+    at Function.c._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:1272)
+    at Function.Module._load (internal/modules/cjs/loader.js:601:27)
+    at Module.require (internal/modules/cjs/loader.js:739:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:689)
+    at __require (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:7:35)
+    at __define (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:54:15)
+    at /Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:219:25
+2022-08-02T01:45:13.448Z - failed: load script [axios] failed : Error: Cannot find module 'axios'
+Require stack:
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/lib/sandbox.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/edit-mode/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/editor.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/index.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/renderer.js
+- /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/index.html
+    at Module._resolveFilename (internal/modules/cjs/loader.js:683:15)
+    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:43:12)
+    at Function.c._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:1272)
+    at Function.Module._load (internal/modules/cjs/loader.js:601:27)
+    at Module.require (internal/modules/cjs/loader.js:739:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:689)
+    at __require (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:7:35)
+    at __define (/Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:54:15)
+    at /Users/mac/simple-blackjack/temp/quick-scripts/dst/assets/script/client.js:219:25

@@ -74,11 +74,6 @@
     "meta": 1659177369000,
     "relativePath": "image/close.png"
   },
-  "6ce16936-d075-4609-b49d-64b2848f8e0b": {
-    "asset": 1659178825000,
-    "meta": 1659178860000,
-    "relativePath": "script/start.ts"
-  },
   "6409d01b-7f0f-4879-9176-ec4a73d56a94": {
     "asset": 1659363250000,
     "meta": 1659363250000,
@@ -113,11 +108,6 @@
     "asset": 1659262628000,
     "meta": 1659269236000,
     "relativePath": "script/proto/score.ts"
-  },
-  "cc4d23dc-c454-4725-81ce-deed92e0f02a": {
-    "asset": 1659270751000,
-    "meta": 1659271299000,
-    "relativePath": "script/client.ts"
   },
   "35701a19-c37e-4356-8603-8d5aa2dbaa83": {
     "asset": 1658652541000,
@@ -728,5 +718,10 @@
     "asset": 1659363402000,
     "meta": 1659363407000,
     "relativePath": "script/pokerUI.ts"
+  },
+  "cc4d23dc-c454-4725-81ce-deed92e0f02a": {
+    "asset": 1659404487000,
+    "meta": 1659404699000,
+    "relativePath": "script/client.ts"
   }
 }
