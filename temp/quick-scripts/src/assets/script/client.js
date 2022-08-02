@@ -74,14 +74,16 @@ var Client = /** @class */ (function () {
                     case 0: return [4 /*yield*/, this.request('make_request_digest', {
                             sender: this.address,
                             contract_call: call_func,
-                            private_key: this.privkey
+                            private_key: this.privkey,
+                            payment: String(20)
                         })];
                     case 1:
                         response = _a.sent();
+                        console.log(response);
                         if (response.status != 200) {
                             throw 'bad jsonrpc call';
                         }
-                        return [2 /*return*/, response.data.result.digest];
+                        return [2 /*return*/, response.data.result];
                 }
             });
         });
@@ -89,15 +91,21 @@ var Client = /** @class */ (function () {
     // call while `claim` button clicked in achivement page
     Client.prototype.claim_nfts = function () {
         return __awaiter(this, void 0, Promise, function () {
-            var global;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var global, claimable, _i, _a, lock_hash, v;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
                     case 0: return [4 /*yield*/, this.fetch_global()];
                     case 1:
-                        global = _a.sent();
-                        if (!(global.nfts.length > 0)) return [3 /*break*/, 3];
+                        global = _b.sent();
+                        claimable = false;
+                        for (_i = 0, _a = Object.keys(global.users); _i < _a.length; _i++) {
+                            lock_hash = _a[_i];
+                            v = global.users[lock_hash];
+                            claimable = v.nfts.length > 0;
+                        }
+                        if (!claimable) return [3 /*break*/, 3];
                         return [4 /*yield*/, this.send_transaction('claim_nfts()')];
-                    case 2: return [2 /*return*/, _a.sent()];
+                    case 2: return [2 /*return*/, _b.sent()];
                     case 3: return [2 /*return*/, 'nothing'];
                 }
             });
@@ -114,10 +122,11 @@ var Client = /** @class */ (function () {
                         })];
                     case 1:
                         response = _a.sent();
+                        console.log(response);
                         if (response.status != 200) {
                             throw 'bad jsonrpc call';
                         }
-                        return [2 /*return*/, JSON.parse(response.data.result.data)];
+                        return [2 /*return*/, JSON.parse(response.data.result)];
                 }
             });
         });
@@ -144,46 +153,21 @@ var Client = /** @class */ (function () {
             });
         });
     };
-    Client.prototype.get_win_lose_count = function () {
+    Client.prototype.get_achievement = function () {
         return __awaiter(this, void 0, Promise, function () {
-            var global, result, _i, _a, v;
+            var global, result, _i, _a, lock_hash;
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0: return [4 /*yield*/, this.fetch_global()];
                     case 1:
                         global = _b.sent();
-                        result = { win_count: 0, lose_count: 0 };
-                        for (_i = 0, _a = global.nfts; _i < _a.length; _i++) {
-                            v = _a[_i];
-                            result = {
-                                win_count: v.win_count,
-                                lose_count: v.lose_count
-                            };
+                        console.log('global =', global);
+                        result = { win_count: 0, lose_count: 0, nfts: [] };
+                        for (_i = 0, _a = Object.keys(global.users); _i < _a.length; _i++) {
+                            lock_hash = _a[_i];
+                            result = global.users[lock_hash];
                         }
                         return [2 /*return*/, result];
-                }
-            });
-        });
-    };
-    // call to fetch nfts owned by player
-    Client.prototype.fetch_nfts = function () {
-        return __awaiter(this, void 0, Promise, function () {
-            var hash, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.claim_nfts()];
-                    case 1:
-                        hash = _a.sent();
-                        console.log('claim_nfts hash =', hash);
-                        return [4 /*yield*/, this.request('fetch_personal_data', {
-                                address: this.address,
-                            })];
-                    case 2:
-                        response = _a.sent();
-                        if (response.status != 200) {
-                            throw 'bad jsonrpc call';
-                        }
-                        return [2 /*return*/, JSON.parse(response.data.result.data)];
                 }
             });
         });
@@ -196,7 +180,7 @@ exports.default = Client;
  *
  *  let client = new Client(
  *      'http://127.0.0.1:8090',
- *      '8d929e962f940f75aa32054f19a5ea2ce70ae30bfe4ff7cf2dbed70d556265df',
+ *      '0x8d929e962f940f75aa32054f19a5ea2ce70ae30bfe4ff7cf2dbed70d556265df',
  *      'ckt1qyq93wzur9h9l6qwyk6d4dvkuufp6gvl08aszz5syl'
  *  );
  *  let tx_hash = await client.battle_win();

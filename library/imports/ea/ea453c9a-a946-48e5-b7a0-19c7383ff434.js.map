@@ -1,0 +1,1 @@
+{"version":3,"sources":["assets/script/config.ts"],"names":[],"mappings":";;;;;;;AAAa,QAAA,OAAO,GAAG,kBAAkB,CAAC;AAC7B,QAAA,kBAAkB,GAAG,aAAa,CAAC;AACnC,QAAA,cAAc,GAAG,UAAU,CAAC","file":"","sourceRoot":"/","sourcesContent":["export const RPC_URL = \"http://127.0.0.1\";\nexport const MY_CKB_PRIVATE_KEY = \"private_key\";\nexport const MY_CKB_ADDRESS = \"0x111111\";\n"]}

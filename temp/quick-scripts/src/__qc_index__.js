@@ -2,6 +2,7 @@
 require('./assets/script/achievement');
 require('./assets/script/achievementItemUI');
 require('./assets/script/client');
+require('./assets/script/config');
 require('./assets/script/entity/achievementItem');
 require('./assets/script/entity/poker');
 require('./assets/script/game');

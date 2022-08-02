@@ -699,16 +699,6 @@
     "meta": 1659362673000,
     "relativePath": "script/entity/achievementItem.ts"
   },
-  "62e6504a-62b0-4713-9927-d0a42e9b5751": {
-    "asset": 1659362744000,
-    "meta": 1659362759000,
-    "relativePath": "script/achievement.ts"
-  },
-  "51a8d54b-b426-4503-8ec6-9ed50e3c2d49": {
-    "asset": 1659363193000,
-    "meta": 1659363215000,
-    "relativePath": "script/game.ts"
-  },
   "03aed59f-033e-4188-a65e-9e73c3b1a32d": {
     "asset": 1659363391000,
     "meta": 1659363407000,
@@ -719,9 +709,24 @@
     "meta": 1659363407000,
     "relativePath": "script/pokerUI.ts"
   },
+  "ea453c9a-a946-48e5-b7a0-19c7383ff434": {
+    "asset": 1659426085000,
+    "meta": 1659426430000,
+    "relativePath": "script/config.ts"
+  },
   "cc4d23dc-c454-4725-81ce-deed92e0f02a": {
-    "asset": 1659404487000,
-    "meta": 1659404699000,
+    "asset": 1659434635000,
+    "meta": 1659434654000,
     "relativePath": "script/client.ts"
+  },
+  "51a8d54b-b426-4503-8ec6-9ed50e3c2d49": {
+    "asset": 1659434639000,
+    "meta": 1659434654000,
+    "relativePath": "script/game.ts"
+  },
+  "62e6504a-62b0-4713-9927-d0a42e9b5751": {
+    "asset": 1659435157000,
+    "meta": 1659435178000,
+    "relativePath": "script/achievement.ts"
   }
 }

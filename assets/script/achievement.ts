@@ -9,6 +9,7 @@ const {ccclass, property} = cc._decorator;
 import AchievementItemUI from './achievementItemUI';
 import Client from './client'
 import { AchievementItem } from './entity/achievementItem';
+import { RPC_URL, MY_CKB_PRIVATE_KEY, MY_CKB_ADDRESS } from "./config";
 
 @ccclass
 export default class NewClass extends cc.Component {
@@ -24,19 +25,19 @@ export default class NewClass extends cc.Component {
 
     private client: Client = null;
 
-    start () {
+    async start () {
         this.closeBtn.on(cc.Node.EventType.TOUCH_START, this.onCloseBtnClick, this);
-        // const client = new Client();
-        // const scoreRes = await client.getScore('user');
-        // this.init(scoreRes.success, scoreRes.total);
-        this.initScore(10, 30);
+        this.client = new Client(RPC_URL, MY_CKB_PRIVATE_KEY, MY_CKB_ADDRESS);
 
-        let total = 20;
+        const statics = await this.client.get_achievement();
+        this.initScore(statics.win_count, statics.win_count + statics.lose_count);
+
+        let total = statics.nfts.length;
         var y = -10;
         for (var i = 0; i < total / 7; ++i) {
             var x = -240;
-            for (var j = 0; j < 7; j++) {
-                let itemUI = this.createItemUI(new AchievementItem(i * 7 + j));
+            for (var j = 0; j < 7 && i * 7 + j < total; j++) {
+                let itemUI = this.createItemUI(new AchievementItem(statics.nfts[i * 7 + j]));
                 itemUI.node.x = x;
                 itemUI.node.y = y;
                 this.node.addChild(itemUI.node);

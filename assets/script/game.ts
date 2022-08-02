@@ -9,6 +9,7 @@ const {ccclass, property} = cc._decorator;
 import {Poker, PokerStatus} from "./entity/poker"
 import PokerUI from "./pokerUI"
 import Client from './client'
+import { RPC_URL, MY_CKB_PRIVATE_KEY, MY_CKB_ADDRESS } from "./config";
 
 const POKER_COUNT: number = 11;
 const SHUFFLE_COUNT: number = 100;
@@ -73,7 +74,7 @@ export default class Game extends cc.Component {
         this.restartBtn.node.on('click', this.onRestartBtnClick, this);
         this.closeBtn.on(cc.Node.EventType.TOUCH_START, this.onCloseBtnClick, this);
 
-        // this.client = new Client();
+        this.client = new Client(RPC_URL, MY_CKB_PRIVATE_KEY, MY_CKB_ADDRESS);
     }
 
     private init() {
@@ -151,8 +152,8 @@ export default class Game extends cc.Component {
         return pokerUI;
     }
 
-    private onHitBtnClick() {
-        if (this.restPokerCnt <= 0) return this.whoWin();
+    private async onHitBtnClick() {
+        if (this.restPokerCnt <= 0) return await this.whoWin();
         if (!this.turnPlayer || this.gameOver) return;
 
         let pokerNode = this.pokerContainer.children[this.restPokerCnt - 1];
@@ -198,15 +199,15 @@ export default class Game extends cc.Component {
         this.playerPoint.string = `Point: ${this.player.score}`;
         this.player.skip = false;
 
-        this.robotHit();
+        await this.robotHit();
     }
 
     private playerCardPosX() {
         return 330 + 70 * this.player.cardCnt;
     }
 
-    private robotHit() {
-        if (this.restPokerCnt <= 0) return this.whoWin();
+    private async robotHit() {
+        if (this.restPokerCnt <= 0) return await this.whoWin();
         if (this.turnPlayer || this.gameOver) return;
 
         if (this.robot.score >= 17 
@@ -258,14 +259,14 @@ export default class Game extends cc.Component {
         this.robotChoice.string = ''
     }
 
-    private robotStay() {
-        if (this.restPokerCnt <= 0) return this.whoWin();
+    private async robotStay() {
+        if (this.restPokerCnt <= 0) return await this.whoWin();
         this.turnPlayer = true;
         this.robotChoice.string = 'Stay'
         this.robot.skip = true;
 
         if (this.player.skip) {
-            this.whoWin();
+            await this.whoWin();
         }
     }
 
@@ -273,7 +274,7 @@ export default class Game extends cc.Component {
         return 330 + 70 * this.robot.cardCnt;
     }
 
-    private onStayBtnClick() {
+    private async onStayBtnClick() {
         cc.audioEngine.playEffect(this.stayMusic, false);
         if (this.restPokerCnt <= 0) return this.whoWin();
         if (!this.turnPlayer || this.gameOver) return;
@@ -281,10 +282,10 @@ export default class Game extends cc.Component {
         this.player.skip = true;
 
         if (this.robot.skip) {
-            return this.whoWin();
+            return await this.whoWin();
         }
 
-        this.robotHit();
+        await this.robotHit();
     }
 
     private onRestartBtnClick() {
@@ -292,7 +293,7 @@ export default class Game extends cc.Component {
         this.reset();
     }
 
-    private whoWin() {
+    private async whoWin() {
         let robotHoldCardNode = this.robotArea.children[0];
         let robotHoldCard = robotHoldCardNode.getComponent(PokerUI);
         robotHoldCard.setStatus(PokerStatus.OPEN);
@@ -329,22 +330,24 @@ export default class Game extends cc.Component {
             }
         }
 
+        this.gameOver = true;
+
         if (playerWin === WinStatus.WIN) {
             this.result.string = 'You Win';
             this.playerFirst = true;
             this.win.node.active = true;
             cc.audioEngine.playEffect(this.successMusic, false);
+            await this.client.battle_win();
         } else  {
+            this.playerFirst = false;
+            cc.audioEngine.playEffect(this.failedMusic, false);
             if (playerWin === WinStatus.DRAW) {
                 this.result.string = 'Draw';
             } else {
                 this.result.string = 'You Lose';
+                await this.client.battle_lose();
             }
-            this.playerFirst = false;
-            cc.audioEngine.playEffect(this.failedMusic, false);
         }
-
-        this.gameOver = true;
     }
 
     private onCloseBtnClick() {
