@@ -2544,8 +2544,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 73.4,
-      "height": 37.8
+      "width": 839.14,
+      "height": 27.72
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2556,8 +2556,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        0,
-        -151.719,
+        -20,
+        287.74,
         0,
         0,
         0,
@@ -2597,16 +2597,16 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_useOriginalSize": false,
-    "_string": "Label",
-    "_N$string": "Label",
-    "_fontSize": 30,
-    "_lineHeight": 30,
+    "_string": "",
+    "_N$string": "",
+    "_fontSize": 22,
+    "_lineHeight": 22,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 0,
+    "_styleFlags": 1,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -2702,6 +2702,9 @@
     },
     "result": {
       "__id__": 44
+    },
+    "txHash": {
+      "__id__": 50
     },
     "bgMusic": {
       "__uuid__": "9756f6fb-690b-4bbe-9bc6-4005c0d65d99"

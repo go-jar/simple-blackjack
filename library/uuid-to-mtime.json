@@ -145,8 +145,8 @@
     "relativePath": "image/game_win.png"
   },
   "8b6275b5-b193-480d-9dba-858e9df60e7b": {
-    "asset": 1659444352000,
-    "meta": 1659444352000,
+    "asset": 1659444903000,
+    "meta": 1659444903000,
     "relativePath": "scene/game.fire"
   },
   "1c2b874f-3864-4438-a6e5-654b60b61c24": {
@@ -725,8 +725,8 @@
     "relativePath": "script/config.ts"
   },
   "51a8d54b-b426-4503-8ec6-9ed50e3c2d49": {
-    "asset": 1659444039000,
-    "meta": 1659444044000,
+    "asset": 1659444892000,
+    "meta": 1659444893000,
     "relativePath": "script/game.ts"
   }
 }
