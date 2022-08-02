@@ -1,5 +1,28 @@
 import Axios from 'axios'
 
+interface WinLoseCount {
+    win_count: number,
+    lose_count: number,
+}
+
+interface TransactionHash {
+    digest: string
+}
+
+interface Outpoint {
+    tx_hash: string,
+    index: number,
+}
+
+interface NFT {
+    nfts: Array<number>,
+    outpoint: Outpoint, // 这个不用使用
+}
+
+interface NFTs {
+    data: Array<NFT>
+}
+
 export default class Client {
     url: string;
     privkey: string;
@@ -36,35 +59,51 @@ export default class Client {
         return response.data.result.digest;
     }
 
-    // call when win the battle
-    public async battle_win(): Promise<any> {
-        return await this.send_transaction('battle_win()');
-    }
-
-    // call when lose the battle
-    public async battle_lose(): Promise<any> {
-        return await this.send_transaction('battle_lose()');
-    }
-
     // call while `claim` button clicked in achivement page
-    public async claim_nfts(): Promise<any> {
-        return await this.send_transaction('claim_nfts()');
+    private async claim_nfts(): Promise<any> {
+        let global = await this.fetch_global();
+        if (global.nfts.length > 0) {
+            return await this.send_transaction('claim_nfts()');
+        } else {
+            return null;
+        }
     }
 
     // call to check button status of `claim`
-    public async fetch_claimable(): Promise<boolean> {
+    private async fetch_global(): Promise<any> {
         let response = await this.request('fetch_global_data', {
             address: this.address,
         });
         if (response.status != 200) {
             throw 'bad jsonrpc call';
         }
-        let data = JSON.parse(response.data.result.data);
-        return data.nfts.length > 0;
+        return JSON.parse(response.data.result.data);
+    }
+
+    // call when win the battle
+    public async battle_win(): Promise<TransactionHash> {
+        return await this.send_transaction('battle_win()');
+    }
+
+    // call when lose the battle
+    public async battle_lose(): Promise<TransactionHash> {
+        return await this.send_transaction('battle_lose()');
+    }
+
+    public async get_win_lose_count(): Promise<WinLoseCount> {
+        let global = await this.fetch_global();
+        let result = { win_count: 0, lose_count: 0 };
+        for (let v of global.nfts) {
+            result = {
+                win_count: v.win_count,
+                lose_count: v.lose_count
+            };
+        }
+        return result;
     }
 
     // call to fetch nfts owned by player
-    public async fetch_nfts(): Promise<any> {
+    public async fetch_nfts(): Promise<NFTs> {
         let response = await this.request('fetch_personal_data', {
             address: this.address,
         });
