@@ -65,7 +65,7 @@ export default class Client {
         if (global.nfts.length > 0) {
             return await this.send_transaction('claim_nfts()');
         } else {
-            return null;
+            return 'nothing';
         }
     }
 
@@ -104,6 +104,8 @@ export default class Client {
 
     // call to fetch nfts owned by player
     public async fetch_nfts(): Promise<NFTs> {
+        let hash = await this.claim_nfts();
+        console.log('claim_nfts hash =', hash);
         let response = await this.request('fetch_personal_data', {
             address: this.address,
         });
