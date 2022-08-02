@@ -97,6 +97,7 @@ var Game = /** @class */ (function (_super) {
         _this.robotPoint = null;
         _this.robotChoice = null;
         _this.result = null;
+        _this.txHash = null;
         _this.bgMusic = null;
         _this.flipMusic = null;
         _this.successMusic = null;
@@ -127,6 +128,7 @@ var Game = /** @class */ (function (_super) {
         this.client = new client_1.default(config_1.RPC_URL, config_1.MY_CKB_PRIVATE_KEY, config_1.MY_CKB_ADDRESS);
     };
     Game.prototype.init = function () {
+        this.txHash.string = "";
         this.win.node.active = false;
         this.gameOver = false;
         this.shuffle();
@@ -335,7 +337,7 @@ var Game = /** @class */ (function (_super) {
     };
     Game.prototype.whoWin = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var robotHoldCardNode, robotHoldCard, playerWin;
+            var robotHoldCardNode, robotHoldCard, playerWin, txHash;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -376,6 +378,7 @@ var Game = /** @class */ (function (_super) {
                             }
                         }
                         this.gameOver = true;
+                        txHash = "";
                         if (!(playerWin === WinStatus.WIN)) return [3 /*break*/, 2];
                         this.result.string = 'You Win';
                         this.playerFirst = true;
@@ -383,7 +386,7 @@ var Game = /** @class */ (function (_super) {
                         cc.audioEngine.playEffect(this.successMusic, false);
                         return [4 /*yield*/, this.client.battle_win()];
                     case 1:
-                        _a.sent();
+                        txHash = _a.sent();
                         return [3 /*break*/, 5];
                     case 2:
                         this.playerFirst = false;
@@ -395,9 +398,11 @@ var Game = /** @class */ (function (_super) {
                         this.result.string = 'You Lose';
                         return [4 /*yield*/, this.client.battle_lose()];
                     case 4:
-                        _a.sent();
+                        txHash = _a.sent();
                         _a.label = 5;
-                    case 5: return [2 /*return*/];
+                    case 5:
+                        this.txHash.string = "tx hash: " + txHash;
+                        return [2 /*return*/];
                 }
             });
         });
@@ -443,6 +448,9 @@ var Game = /** @class */ (function (_super) {
     __decorate([
         property(cc.Label)
     ], Game.prototype, "result", void 0);
+    __decorate([
+        property(cc.Label)
+    ], Game.prototype, "txHash", void 0);
     __decorate([
         property(cc.AudioClip)
     ], Game.prototype, "bgMusic", void 0);

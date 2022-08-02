@@ -40,6 +40,7 @@ export default class Game extends cc.Component {
     @property(cc.Label) robotChoice: cc.Label = null;
 
     @property(cc.Label) result: cc.Label = null;
+    @property(cc.Label) txHash: cc.Label = null;
 
     @property(cc.AudioClip) bgMusic: cc.AudioClip = null;
     @property(cc.AudioClip) flipMusic: cc.AudioClip = null;
@@ -78,6 +79,7 @@ export default class Game extends cc.Component {
     }
 
     private init() {
+        this.txHash.string = "";
         this.win.node.active = false;
         this.gameOver = false;
         this.shuffle();
@@ -331,13 +333,13 @@ export default class Game extends cc.Component {
         }
 
         this.gameOver = true;
-
+        var txHash: String = "";
         if (playerWin === WinStatus.WIN) {
             this.result.string = 'You Win';
             this.playerFirst = true;
             this.win.node.active = true;
             cc.audioEngine.playEffect(this.successMusic, false);
-            await this.client.battle_win();
+            txHash = await this.client.battle_win();
         } else  {
             this.playerFirst = false;
             cc.audioEngine.playEffect(this.failedMusic, false);
@@ -345,9 +347,10 @@ export default class Game extends cc.Component {
                 this.result.string = 'Draw';
             } else {
                 this.result.string = 'You Lose';
-                await this.client.battle_lose();
+                txHash = await this.client.battle_lose();
             }
         }
+        this.txHash.string = `tx hash: ${txHash}`
     }
 
     private onCloseBtnClick() {
