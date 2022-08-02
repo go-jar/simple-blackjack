@@ -145,8 +145,8 @@
     "relativePath": "image/game_win.png"
   },
   "8b6275b5-b193-480d-9dba-858e9df60e7b": {
-    "asset": 1659442819000,
-    "meta": 1659442819000,
+    "asset": 1659444352000,
+    "meta": 1659444352000,
     "relativePath": "scene/game.fire"
   },
   "1c2b874f-3864-4438-a6e5-654b60b61c24": {
@@ -709,11 +709,6 @@
     "meta": 1659363407000,
     "relativePath": "script/pokerUI.ts"
   },
-  "ea453c9a-a946-48e5-b7a0-19c7383ff434": {
-    "asset": 1659426085000,
-    "meta": 1659426430000,
-    "relativePath": "script/config.ts"
-  },
   "cc4d23dc-c454-4725-81ce-deed92e0f02a": {
     "asset": 1659434635000,
     "meta": 1659434654000,
@@ -724,9 +719,14 @@
     "meta": 1659435178000,
     "relativePath": "script/achievement.ts"
   },
+  "ea453c9a-a946-48e5-b7a0-19c7383ff434": {
+    "asset": 1659443992000,
+    "meta": 1659444002000,
+    "relativePath": "script/config.ts"
+  },
   "51a8d54b-b426-4503-8ec6-9ed50e3c2d49": {
-    "asset": 1659443274000,
-    "meta": 1659443284000,
+    "asset": 1659444039000,
+    "meta": 1659444044000,
     "relativePath": "script/game.ts"
   }
 }
