@@ -674,16 +674,6 @@
     "meta": 1659355344000,
     "relativePath": "script/entity"
   },
-  "abc2cb62-7852-4525-a90d-d474487b88f2": {
-    "asset": 1592807258000,
-    "meta": 1659359536000,
-    "relativePath": "effects/builtin-phong.effect"
-  },
-  "e2f00085-c597-422d-9759-52c360279106": {
-    "asset": 1592807258000,
-    "meta": 1659359537000,
-    "relativePath": "effects/builtin-toon.effect"
-  },
   "95c5b910-a3f6-40ab-aae0-a99747883f6b": {
     "asset": 1659362964000,
     "meta": 1659362964000,
@@ -725,8 +715,18 @@
     "relativePath": "script/config.ts"
   },
   "51a8d54b-b426-4503-8ec6-9ed50e3c2d49": {
-    "asset": 1659444892000,
-    "meta": 1659444893000,
+    "asset": 1659444911000,
+    "meta": 1659599271000,
     "relativePath": "script/game.ts"
+  },
+  "abc2cb62-7852-4525-a90d-d474487b88f2": {
+    "asset": 1592807258000,
+    "meta": 1659599276000,
+    "relativePath": "effects/builtin-phong.effect"
+  },
+  "e2f00085-c597-422d-9759-52c360279106": {
+    "asset": 1592807258000,
+    "meta": 1659599277000,
+    "relativePath": "effects/builtin-toon.effect"
   }
 }
